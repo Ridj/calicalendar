@@ -1,0 +1,78 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex: 1;
+  background: rgba(0, 0, 255, .2);
+  justify-content: space-around;
+}
+
+header button {
+  width: 25%
+}
+
+.logged header {
+  background: rgba(0, 255, 255, .2);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex: 8;
+}
+
+section:first-of-type {
+  flex: 1;
+  background: rgba(255, 228, 196, .2);
+}
+
+section:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 4;
+  background: rgba(255, 0, 0, .2);
+}
+
+.logged section:nth-of-type(2) {
+  background: rgba(255, 127, 80, .2);
+}
+
+section:last-of-type {
+  flex: 2;
+  background: rgba(218, 165, 32, .2);
+}
+
+.logged section:last-of-type {
+  background: rgba(255, 255, 0, .2);
+}
+
+footer {
+  display: flex;
+  flex: 0.5;
+  background: rgba(0, 129, 0, .2);
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer span:first-of-type {
+  flex: 1;
+}
+
+footer span:last-of-type {
+  flex: 4;
+  text-align: center;
+}
+
+.logged footer {
+  background: rgba(144, 238, 144, .2);
+}

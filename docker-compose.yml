@@ -1,0 +1,35 @@
+version: '3'
+services:
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 9304:80
+  postgres:
+    image: postgres:10.4-alpine
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5438:5432
+  pgblackboard:
+    image: exedealer/pgblackboard
+    environment:
+      - PGBB_POSTGRES=postgres:5432
+    ports:
+      - 9302:7890
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 9300:80
+    depends_on:
+      - django
+volumes:
+  pgdata:

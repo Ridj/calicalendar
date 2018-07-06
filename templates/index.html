@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Index</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header id="header_app">
+      <button v-if="logged" @click="my_events">My Events</button>
+      <button v-else @click="overview">Overview</button>
+      <button  @click="pub_events"> Public Events</button>
+      <button v-if="logged">Profile</button>
+      <button v-else>Registration</button>
+      <button id="log_button" @click="login">Login</button>
+  </header>
+
+  <main>
+    <section></section>
+    <section id="todo"><span>Calendar</span></section>
+    <section></section>
+  </main>
+
+  <footer>
+    <span>Copyright</span>
+    <span>Some stuff</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="{% static 'scripts/functions.js' %}"></script>
+</body>
+</html>
